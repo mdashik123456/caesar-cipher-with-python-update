@@ -2,12 +2,14 @@ from other import *
 from os import system
 import platform
 
+# clear display
 def clear_display():
     if platform.system() == "Windows":
         system("cls")
     else:
         system("clear")
-
+        
+# For encoding
 def encode(text, key):
     cipher_text = ""
     
@@ -19,7 +21,7 @@ def encode(text, key):
         cipher_text += alphabet[cipher_text_i - 1]
     print(f"The {choice}d text is : \"{cipher_text}\"")
     
-
+#for decoding encoded text
 def decode(text, key):
     plain_text = ""
     
@@ -45,7 +47,7 @@ while True:
     if choice == "encode" or choice == "decode":
         text = input("Type your messege : ")
         key = int(input("Type the key number : "))
-        # key = key % int((len(alphabet) / 2))
+        
         if choice == "encode":
             encode(text, key)
         else:
